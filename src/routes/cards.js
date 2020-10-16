@@ -17,7 +17,7 @@ router.get('/:cardId', async (req, res) => {
   try {
     const card = await Card.findAll({
       where: {
-        id: cardId
+        uuid: cardId
       }
     }
     )
@@ -25,21 +25,6 @@ router.get('/:cardId', async (req, res) => {
   } catch (error) {
     console.error(error)
   }
-  // res.json({
-  //   cards: [
-  //     {
-  //       "id": Date.now(),
-  //       "value": "Kudos to team",
-  //       "likes": 1,
-  //       "votes": 0
-  //     },
-  //     {
-  //       "cardText": "Stuff didn't go well",
-  //       "likes": 0,
-  //       "votes": 0
-  //     }
-  //   ]
-  // })
 })
 
 router.post('/', (req, res) => {
